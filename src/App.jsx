@@ -1,5 +1,10 @@
-import {HashRouter, Route, Routes, useLocation, useParams} from "react-router-dom";
-import SalesResult from "./pages/SalesResult.jsx";
+import {
+  HashRouter,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import PageAuthSignIn from "./pages/auth/PageAuthSignIn.jsx";
 import { useState } from "react";
 import { ContextApplication } from "./libs/config/contexts.js";
@@ -12,14 +17,14 @@ import PageTerimaPrint from "./pages/terima/PageTerimaPrint.jsx";
 import PageKasList from "./pages/kas/PageKasList.jsx";
 import PageTerimaAmbil from "./pages/terima/PageTerimaAmbil.jsx";
 
-
-
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <>
-      <ContextApplication.Provider value={{isAuthenticated, setIsAuthenticated}}>
+      <ContextApplication.Provider
+        value={{ isAuthenticated, setIsAuthenticated }}
+      >
         <HashRouter>
           <Routes>
             <Route path="/" element={<PageCommonOutlet />}>
@@ -39,10 +44,7 @@ const App = () => {
         </HashRouter>
       </ContextApplication.Provider>
     </>
-  )
-}
+  );
+};
 
-export default App
-
-
-
+export default App;
